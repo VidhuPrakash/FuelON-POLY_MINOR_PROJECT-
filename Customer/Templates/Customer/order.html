@@ -1,0 +1,31 @@
+{% extends 'customer/base.html' %}
+
+{% block content %}
+<div class="container mb-5">
+    <div class="row justify-content-center mt-1">
+        <div class="col-md-12 col-sm-12 p-4">
+            <form method="POST">
+                
+                <div class="pt-5">
+                    {% for Fuel in Customer %}
+                    <div class="column">
+                    
+                            
+                            <div class="card" >
+                                <img src="{{Fuel.image}}" class="card-img-top"  width="45" >
+                                <div class="card-body">
+                                  <h5 class="card-title">{{Fuel.name}}</h5>
+                                  <p class="card-text">{{Fuel.price}}</p>
+                                  <button class="btn btn-primary" href="{% url 'order_confirmation' %}" >Place Order!</button>
+                                </div>
+                              </div>
+                        </div>
+                    </hr>
+                   
+                {% endfor %}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

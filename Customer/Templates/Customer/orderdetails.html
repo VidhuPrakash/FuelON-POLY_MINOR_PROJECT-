@@ -1,0 +1,36 @@
+{% extends 'customer/base.html' %}
+{% block content %}
+<div class="container mb-5">
+    
+    <div class="row justify-content-center mt-1">
+        
+        <div class="col-md-12 col-sm-12 p-4">
+            <h2 >PLACED ORDERS</h2>
+            <form method="POST">
+                
+                <div class="pt-5">
+                    {% for order_data in Customer %}
+                    <div class="column">
+                    
+                            
+                            <div class="card" >
+                                
+                                <div class="card-body">
+                                    
+                                  <h5 class="card-title">Customer name : {{order_data.customer_name}}</h5>
+                                  <p class="card-text"><b>Mobile No:        {{order_data.phone}}</p>
+                                  <p class="card-text"><b>Item:             {{order_data.category}}</p>
+                                  <p class="card-text"><b>Location:         {{order_data.location}}</p>
+                                  <p class="card-text"><b>Quantity:         {{order_data.quantity}}</p>
+                                </div>
+                              </div>
+                        </div>
+                    </hr>
+                   
+                {% endfor %}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}
